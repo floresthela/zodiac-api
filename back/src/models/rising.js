@@ -17,5 +17,6 @@ const risingSchema = new mongoose.Schema({
   incompatibility: [{type:String}],
 })
 
-const Rising = mongoose.model('Rising',risingSchema)
+
+const Rising = mongoose.model('Rising',risingSchema,'rising')
 module.exports = Rising

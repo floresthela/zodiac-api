@@ -1,0 +1,1 @@
+const rising = require('../models/rising')

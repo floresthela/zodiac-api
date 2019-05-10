@@ -16,5 +16,5 @@ const moonSchema = new mongoose.Schema({
   incompatibility: [{type:String}],
 })
 
-const Moon = mongoose.model('Moon',moonSchema)
+const Moon = mongoose.model('Moon',moonSchema,'moon')
 module.exports = Moon

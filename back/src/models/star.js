@@ -1,7 +1,9 @@
 const mongoose = require('mongoose')
 //const validator = require('validator')
 
-const solarSchema = new mongoose.Schema({
+console.log("en el modelo")
+
+const starSchema = new mongoose.Schema({
   name: {type: String},
   date: [{type:String}],
   rulingPlanet: {type: String},
@@ -16,5 +18,5 @@ const solarSchema = new mongoose.Schema({
   incompatibility: [{type:String}],
 })
 
-const Solar = mongoose.model('Solar',solarSchema)
-module.exports = Solar
+const Star = mongoose.model('Star',starSchema, 'star')
+module.exports = Star

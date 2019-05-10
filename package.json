@@ -1,5 +1,5 @@
 {
-  "name": "Zodiac API",
+  "name": "zodiac-api",
   "version": "1.0.0",
   "description": "Backend for Zodiac API",
   "main": "index.js",

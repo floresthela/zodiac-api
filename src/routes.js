@@ -11,7 +11,8 @@ router.all('*',cors())
 
 // ==GETS============================================================================
 router.get('/users', auth, users.getUsers)
-// gets - cualquier usuario puede realizarlo
+
+// gets - cualquiera puede realizarlo
 router.get('/signs/star', stars.getAll)
 router.get('/signs/moon', moons.getAll)
 router.get('/signs/rising', risings.getAll)
@@ -26,6 +27,7 @@ router.post('/signs/star', auth, stars.newStar)
 router.post('signs/moon', auth, moons.newMoon)
 router.post('signs/rising', auth, risings.newRising)
 
+// usuario
 router.post('/users', users.register)  // signup
 router.post('/users/login', users.login)
 router.post('/users/logout', auth, users.logout)
@@ -39,11 +41,7 @@ router.patch('/signs/rising/:sign', auth, risings.updateRising)
 // ==================================================================================
 
 // ==DELETES=========================================================================
-// delete - delete a un signo en específico o todos los signos de una categoría, necesitas ser admin
-// router.delete('/signs/star', auth, stars.deleteAll) x
-// router.delete('/signs/moon', auth, moons.deleteAll) x
-// router.delete('/signs/rising', auth, risings.deleteAll) x
-
+// delete - delete a un signo en específico ya sea star, moon o rising *auth
 router.delete('/signs/star/:sign', auth, stars.deleteStar)
 router.delete('/signs/moon/:sign', auth, moons.deleteMoon)
 router.delete('/signs/rising/:sign', auth, risings.deleteRising)

@@ -9,43 +9,49 @@ const cors = require('cors')
 
 router.all('*',cors())
 
+// ==GETS============================================================================
+router.get('/users', auth, users.getUsers)
 // gets - cualquier usuario puede realizarlo
 router.get('/signs/star', stars.getAll)
-// router.get('/signs/moon', moons.getAll)
-// router.get('/signs/rising', risings.getAll)
-router.get('/signs/star/:sign', stars.getStarSign)
-// router.get('/signs/moon/:sign', moons.getMoonSign)
-// router.get('/signs/rising/:sign', risings.getRisingSign)
+router.get('/signs/moon', moons.getAll)
+router.get('/signs/rising', risings.getAll)
+router.get('/signs/star/:sign', stars.getStar)
+router.get('/signs/moon/:sign', moons.getMoon)
+router.get('/signs/rising/:sign', risings.getRising)
+// ==================================================================================
 
-
+// ==POSTS===========================================================================
 // posts  - necesitan autorización para crear un signo completo, necesitas ser admin
+router.post('/signs/star', auth, stars.newStar)
+router.post('signs/moon', auth, moons.newMoon)
+router.post('signs/rising', auth, risings.newRising)
 
-// router.post('/signs/star', auth, stars.newStar)
-// router.post('signs/moon', auth, moons.newMoon)
-// router.post('signs/rising', auth, rising.newRising)
+router.post('/users', users.register)  // signup
+router.post('/users/login', users.login)
+router.post('/users/logout', auth, users.logout)
+// ==================================================================================
 
-// router.post('/users/login', users.login)
-// router.post('/users/logout', auth, users.logout)
-
+// ==UPDATES=========================================================================
 // patch - update a un signo en especifico, necesitas ser admin
+router.patch('/signs/star/:sign', auth, stars.updateStar)
+router.patch('/signs/moon/:sign', auth, moons.updateMoon)
+router.patch('/signs/rising/:sign', auth, risings.updateRising)
+// ==================================================================================
 
-// router.patch('/signs/star/:sign', auth, stars.updateStarsign)
-// router.patch('/signs/moon/:sign', auth, moons.updateMoonSign)
-// router.patch('/signs/rising/:sign', auth, risings.updateRisingSign)
-
+// ==DELETES=========================================================================
 // delete - delete a un signo en específico o todos los signos de una categoría, necesitas ser admin
+// router.delete('/signs/star', auth, stars.deleteAll) x
+// router.delete('/signs/moon', auth, moons.deleteAll) x
+// router.delete('/signs/rising', auth, risings.deleteAll) x
 
-// router.delete('/signs/star', auth, stars.deleteAll)
-// router.delete('/signs/moon', auth, moons.deleteAll)
-// router.delete('/signs/rising', auth, risings.deleteAll)
+router.delete('/signs/star/:sign', auth, stars.deleteStar)
+router.delete('/signs/moon/:sign', auth, moons.deleteMoon)
+router.delete('/signs/rising/:sign', auth, risings.deleteRising)
+// ==================================================================================
 
-// router.delete('/signs/star/:sign', auth, stars.deleteStarsign)
-// router.delete('/signs/moon/:sign', auth, moons.deleteMoonSign)
-// router.delete('/signs/rising/:sign', auth, risings.deleteRisingSign)
-console.log("hola3")
 router.get('*', function(req, res) {
   res.send({
-    error: 'This route does not exist, try /signs or /signs/(star, moon or rising) :)'
+    error: 'This route does not exist, try /signs/(star, moon or rising) and you can add /(aries,taurus,etc...) :)'
   })
 })
 

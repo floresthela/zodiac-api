@@ -111,7 +111,7 @@ module.exports = {
   getUser: getUser,
   login: login,
   logout: logout,
-  createUser : createUser,
+  register : createUser,
   updateUser : updateUser,
   deleteUser : deleteUser
 }

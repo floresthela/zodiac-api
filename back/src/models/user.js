@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     type: Number,
     required: true,
     validate(value) {
-      if ( value < 13 ) {
+      if ( value < 15 ) {
         throw new Error('Debes ser mayor de 13 años')
       }
     }
@@ -59,12 +59,22 @@ const userSchema = new mongoose.Schema({
 })
 
 // una relacion entre dos Schemas, no lo guarda, es virtual 
-userSchema.virtual('todos', {
-  ref: 'Todo',
-  localField: '_id',
-  foreignField: 'createdBy'
-})
+// userSchema.virtual('moon', {
+//   ref: 'Moon',
+//   localField: '_id',
+//   //foreignField: 'createdBy'
+// })
 
+// userSchema.virtual('rising', {
+//   ref: 'Rising',
+//   localField: '_id',
+//   //foreignField: 'createdBy'
+// })
+// userSchema.virtual('star', {
+//   ref: 'Star',
+//   localField: '_id',
+//   //foreignField: 'createdBy'
+// })
 userSchema.methods.toJSON = function() {
   const user = this
   const userObject = user.toObject()

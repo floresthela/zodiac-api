@@ -11,7 +11,7 @@ const solarSchema = new mongoose.Schema({
   image: {type: String},
   quality: {type: String},
   gender: {type: String},
-  characteristics: [{type:String}],
+  characteristics: {type:String},
   compatibility: [{type:String}],
   incompatibility: [{type:String}],
 })

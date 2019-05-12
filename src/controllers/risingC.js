@@ -44,7 +44,7 @@ const updateRising = function(req,res){
     const par = req.params.sign
     const sign = par.charAt(0).toUpperCase() + par.slice(1)
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['traits','characteristics','image']
+    const allowedUpdates = ['rulingPlanet','characteristics','element','birthStone','quality','gender']
 
     const isValidUpdate = updates.every((update) => allowedUpdates.includes(update))
 

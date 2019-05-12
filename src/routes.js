@@ -24,8 +24,8 @@ router.get('/signs/rising/:sign', risings.getRising)
 // ==POSTS===========================================================================
 // posts  - necesitan autorización para crear un signo completo, necesitas ser admin
 router.post('/signs/star', auth, stars.newStar)
-router.post('signs/moon', auth, moons.newMoon)
-router.post('signs/rising', auth, risings.newRising)
+router.post('/signs/moon', auth, moons.newMoon)
+router.post('/signs/rising', auth, risings.newRising)
 
 // usuario
 router.post('/users', users.register)  // signup

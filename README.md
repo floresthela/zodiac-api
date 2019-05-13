@@ -6,8 +6,7 @@ https://floresthela.github.io/ZodiacAPI/
 
 In the main page you can see your options in the navbar, you can go to an About, Contact and admin Login 
 
-
-
+![Alt Text](readme/index.png)
 
 About page
 

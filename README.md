@@ -1,7 +1,7 @@
 # API FINAL PROJECT
 Final project - Zodiac signs info API
 
-https://floresthela.github.io/ZodiacAPI/
+# You can find our front-end here: https://floresthela.github.io/ZodiacAPI/
 
 
 ## In the main page you can see your options in the navbar, you can go to an About, Contact and admin Login 

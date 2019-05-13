@@ -16,7 +16,7 @@ const getMoon = function(req,res){
     const sign = par.charAt(0).toUpperCase() + par.slice(1)
     
     console.log(sign.toLowerCase())
-    moon.findOne({name:sign}).then(function(sign){
+    Moon.findOne({name:sign}).then(function(sign){
         if(sign){
             return res.status(200).send(sign)
         } else {
